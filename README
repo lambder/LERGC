@@ -1,7 +1,7 @@
 LERGC - is Lazy Evaluation Recursive Grammar Combinators for Clojure.
 It is inspired by Monadic Parser Combinators (Hutton & Meijer 1996; http://www.itu.dk/~carsten/courses/f02/handouts/MonadicParserCombinators.pdf)
-which shows how to buld parser combinators in Gofer (statically typed, lazy functional language).
-The LERGC implementation differs from the Gofer one since Clojure is not lazy. Laziness was realized by changing the monadic value signature
+which shows how to build parser combinators in Gofer (statically typed, lazy functional language).
+The LERGC implementation differs from the Gofer one since Clojure is not lazy. Laziness was realised by changing the monadic value signature
 in state monad from 'S -> [V, S]' to 'unit -> S -> [V, S]', so monadic values combinators execute them only as required.
 Another addition is that of representing failed computation (parser not matching). Rather than representing the failure as universal zero, it is represented
  as variant in 'Either' data type, here in Clojure implemented as closures (see: Error-handling Monads http://mvanier.livejournal.com/5103.html).
